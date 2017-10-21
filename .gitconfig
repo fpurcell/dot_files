@@ -1,0 +1,12 @@
+[user]
+	name = Frank Purcell
+	email = fxpurcell@gmail.com
+	password = <DOT D>
+[trimet]
+	name = Purcell, Frank
+	email = purcellf@trimet.org
+[github]
+	user = fpurcell
+	token = <GET FROM GITHUB>
+[push]
+	default = simple
