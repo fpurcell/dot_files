@@ -1,0 +1,11 @@
+[user]
+        name = Frank Purcell
+        email = fxpurcell@gmail.com
+[includeIf "gitdir:~/work/"]
+        path = ~/work/.gitconfig
+[core]
+        autocrlf = false
+[alias]
+        co = checkout
+        br = branch
+        bra = branch -vva
