@@ -7,5 +7,6 @@ Found the AirB&B Style Guide for intellij here: https://gist.githubusercontent.c
 1. Preferences -> Editor -> Code Style -> JavaScript
 1. You'll see a "Scheme: " dialog, with a gear tool drop down
 1. Under that, there's an Import Schema for importing .xml 
+1. Control-Alt-Shift-L to reformat code according to your specified style guide
 1. viola
 
