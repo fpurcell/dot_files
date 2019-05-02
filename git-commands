@@ -26,7 +26,7 @@ I (John Z) use a rebase workflow in a similar scenario for repos I've forked fro
 1. Checkout working and run: git checkout working && git rebase master
 
 
-```
+'''
 
 # do this once
 git clone git@github.com:TriMetPDX/otp-react-redux.git
@@ -43,7 +43,8 @@ git checkout -b tm_vehicles
 git checkout master && git pull upstream master
 git checkout tm_vehicles && git rebase master
 
-```
+
+'''
 
 
 NOTE: your local commit hashes changed in the 'working' branch, but you've incorporated everything from the upstream master into your local project.
