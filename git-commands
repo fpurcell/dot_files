@@ -3,6 +3,31 @@ Check Out Commands
 git pull origin pull/<PULL REQUEST ID>/head
 
 
+Info commands
+===================
+
+# show all remote branches, with dates of last commit:
+git for-each-ref --sort=committerdate --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:short)%(color:reset))'
+
+alias branches="git for-each-ref --sort=committerdate --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:short)%(color:reset))'"
+
+
+
+Working with FORKZ:
+===================
+I (John Z) use a rebase workflow in a similar scenario for repos I've forked from.  I take a little longer way to do the same thing Grant is suggesting, but it keeps everything reliably separated for me at least.   I generally only pull upstream into master and in my forked repo I leave master alone, treating it as my pivot branch between the two origins.  I then rebase master into whatever I am working on locally.
+
+1. Fork project
+1. Clone fork locally
+1. Fork is now origin
+1. Set original as "upstream" remote
+1. Create a new branch in your local fork to work in (calling it "working" for now).  Make some commits.
+1. Checkout master and run: git checkout master && git pull upstream master
+1. Checkout working and run: git checkout working && git rebase master
+
+NOTE: your local commit hashes changed in the 'working' branch, but you've incorporated everything from the upstream master into your local project.
+
+
 
 Pivot point from github to local gitlab:
 =========================================
@@ -14,5 +39,6 @@ git push origin master -u
 git pull upstream master
 git fetch upstream
 git fetch upstream --prune
+
 
 
