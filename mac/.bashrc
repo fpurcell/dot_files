@@ -40,6 +40,9 @@ function py6_func
 
 #alias mcount="for x in `grep -i mobilitymap l*/h*/a*07 | awk '{print $1}' | sort -u`; do echo $x; grep $x l*/h*/a*07 | wc; echo; nslookup $x; done"
 
+alias branches="git for-each-ref --sort=committerdate --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:short)%(color:reset))'"
+
+
 alias 'SVNU=svn update --ignore-externals'
 alias 'SVNC=svn status -u | grep ^M'
 alias svnc=SVNC
