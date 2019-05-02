@@ -28,21 +28,28 @@ I (John Z) use a rebase workflow in a similar scenario for repos I've forked fro
 
 '''
 
-# do this once
+# do this once to set up local repo
 git clone git@github.com:TriMetPDX/otp-react-redux.git
 git remote add upstream https://github.com/opentripplanner/otp-react-redux.git
 git checkout -b tm_vehicles
+git push --set-upstream origin tm_vehicles
 
+# repeat whenever you want to rebase the fork's parent
+git checkout master && git pull upstream master
+git checkout trimet-dev && git pull upstream trimet-dev
+git checkout tm_vehicles && git rebase trimet-dev
+
+
+# NOTE: might not make any changes to trimet-mod-otp, so may not need do this, but...
 # do this once
 git clone git@github.com:TriMetPDX/trimet-mod-otp.git
 git remote add upstream https://github.com/conveyal/trimet-mod-otp.git
 git checkout -b tm_vehicles
-
+git push --set-upstream origin tm_vehicles
 
 # repeat whenever you want to rebase the fork's parent
 git checkout master && git pull upstream master
 git checkout tm_vehicles && git rebase master
-
 
 '''
 
