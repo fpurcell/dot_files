@@ -21,9 +21,30 @@ I (John Z) use a rebase workflow in a similar scenario for repos I've forked fro
 1. Clone fork locally
 1. Fork is now origin
 1. Create a new branch in your local fork to work in: git checkout -b working
-1. Set original as "upstream" remote: git remote add upstream https://github.com/conveyal/trimet-mod-otp.git
+1. Set original as "upstream" remote: git remote add upstream https://github.com/ORIGINAL_REPO
 1. Checkout master and run: git checkout master && git pull upstream master
 1. Checkout working and run: git checkout working && git rebase master
+
+
+```
+
+# do this once
+git clone git@github.com:TriMetPDX/otp-react-redux.git
+git remote add upstream https://github.com/opentripplanner/otp-react-redux.git
+git checkout -b tm_vehicles
+
+# do this once
+git clone git@github.com:TriMetPDX/trimet-mod-otp.git
+git remote add upstream https://github.com/conveyal/trimet-mod-otp.git
+git checkout -b tm_vehicles
+
+
+# repeat whenever you want to rebase the fork's parent
+git checkout master && git pull upstream master
+git checkout tm_vehicles && git rebase master
+
+```
+
 
 NOTE: your local commit hashes changed in the 'working' branch, but you've incorporated everything from the upstream master into your local project.
 
