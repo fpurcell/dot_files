@@ -20,8 +20,8 @@ I (John Z) use a rebase workflow in a similar scenario for repos I've forked fro
 1. Fork project
 1. Clone fork locally
 1. Fork is now origin
-1. Set original as "upstream" remote
-1. Create a new branch in your local fork to work in (calling it "working" for now).  Make some commits.
+1. Create a new branch in your local fork to work in: git checkout -b working
+1. Set original as "upstream" remote: git remote add upstream https://github.com/conveyal/trimet-mod-otp.git
 1. Checkout master and run: git checkout master && git pull upstream master
 1. Checkout working and run: git checkout working && git rebase master
 
