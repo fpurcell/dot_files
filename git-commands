@@ -12,6 +12,14 @@ git for-each-ref --sort=committerdate --format='%(HEAD) %(color:yellow)%(refname
 alias branches="git for-each-ref --sort=committerdate --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:short)%(color:reset))'"
 
 
+PR commands
+===================
+
+# switch to PR #999
+1. emacs .git/config and add this line: fetch = +refs/pull/*/head:refs/remotes/origin/pr/*
+2. Fetch PRs locally: $ git fetch origin
+3. Checkout a particular PR: $ git checkout pr/999
+
 
 Working with FORKZ:
 ===================
