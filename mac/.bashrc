@@ -10,13 +10,15 @@ export HISTFILE=$HOME/.bash_history
 export HISTFILESIZE=2000
 export EDITOR=${EDITOR:="emacs"}
 export TERM=${TERM:="vt100"}
-export PATH="/java/go/bin:/opt/opengeo/pgsql/8.4/bin/:$PATH:/home/geoserve/htdocs/tilecache/seed:/java/ant/bin:/java/maven/bin:."
+export PATH="$HOME/java/go/bin:/opt/opengeo/pgsql/8.4/bin/:$PATH:/home/geoserve/htdocs/tilecache/seed:$HOME/java/ant/bin:/java/maven/bin:."
 export GDAL_DATA=/home/geoserve/install/gdal/share/gdal
 export LD_LIBRARY_PATH=~/install/libgeotiff/lib:~/install/proj/lib
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk/Contents/Home
-export GOROOT=/java/go
-export GOPATH="/java/DEV/tegola:/java/go"
 
+# NOTE - prep for below by doing:  cd /Library/Java/JavaVirtualMachines/ ; sudo ln -s *.jdk ./jdk
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk/Contents/Home
+
+export GOROOT=$HOME/java/go
+export GOPATH="$HOME/java/DEV/tegola:/java/go"
 
 # User specific aliases and functions
 alias l='ls -l'
@@ -107,7 +109,7 @@ export EDITOR="emacs"
 alias "SRC=export CLASSPATH=.;. $HOME/.bashrc"
 
 alias "TOM=cd $HOME/cluster"
-alias "DEV=cd /java/DEV"
+alias "DEV=cd $HOME/java/DEV"
 
 alias CPP=CPP_func
 function CPP_func
@@ -128,3 +130,5 @@ export PATH="/usr/local/heroku/bin:$PATH"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
