@@ -17,37 +17,37 @@ PR commands
 fetch = +refs/pull/*/head:refs/remotes/origin/pr/*
  
 # switch to PR #999
-1. emacs .git/config and add this line: fetch = +refs/pull/*/head:refs/remotes/origin/pr/*
-1. Fetch PRs locally: $ git fetch origin
-1. Checkout a particular PR: $ git checkout pr/999
+- emacs .git/config and add this line: fetch = +refs/pull/*/head:refs/remotes/origin/pr/*
+- Fetch PRs locally: $ git fetch origin
+- Checkout a particular PR: $ git checkout pr/999
 
 REBASE fork
 ==============
-1. git remote add upstream https://github.com/opentripplanner/otp-ui.git
-1. git pull
-1. git fetch upstream
-1. git branch -a
-1. git rebase upstream/master
-1. git status
-1. git push  
+- git remote add upstream https://github.com/opentripplanner/otp-ui.git
+- git pull
+- git fetch upstream
+- git branch -a
+- git rebase upstream/master
+- git status
+- git push  
 
 MERGE  branch
 ==================
-1. git checkout master
-1. git pull
-1. git checkout vehicles
-1. git pull
-1. git merge master
-1. git commit -a -m "merged latest master onto my feature branch"
-1. git push
-1. # NOTE: you should now be able to create a PR and it should be realtively clean (just files you changed in your feature branch)
+- git checkout master
+- git pull
+- git checkout vehicles
+- git pull
+- git merge master
+- git commit -a -m "merged latest master onto my feature branch"
+- git push
+- # NOTE: you should now be able to create a PR and it should be realtively clean (just files you changed in your feature branch)
 
 REBASE branch w/master -- NOTE, this can be funky (see MERGE above as an alternate)
 ==================
-1. git checkout master
-1. git pull
-1. git checkout vehicles
-1. git pull
+- git checkout master
+- git pull
+- git checkout vehicles
+- git pull
 
 
 Working with FORKZ:
