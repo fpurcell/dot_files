@@ -23,44 +23,44 @@ fetch = +refs/pull/*/head:refs/remotes/origin/pr/*
 
 REBASE fork
 ==============
-- git remote add upstream https://github.com/opentripplanner/otp-ui.git
-- git pull
-- git fetch upstream
-- git branch -a
-- git rebase upstream/master
-- git status
-- git push  
+git remote add upstream https://github.com/opentripplanner/otp-ui.git
+git pull
+git fetch upstream
+git branch -a
+git rebase upstream/master
+git status
+git push  
 
 MERGE  branch
 ==================
-- git checkout master
-- git pull
-- git checkout vehicles
-- git pull
-- git merge master
-- git commit -a -m "merged latest master onto my feature branch"
-- git push
-- # NOTE: you should now be able to create a PR and it should be realtively clean (just files you changed in your feature branch)
+git checkout master
+git pull
+git checkout vehicles
+git pull
+git merge master
+git commit -a -m "merged latest master onto my feature branch"
+git push
+# NOTE: you should now be able to create a PR and it should be realtively clean (just files you changed in your feature branch)
 
 REBASE branch w/master -- NOTE, this can be funky (see MERGE above as an alternate)
 ==================
-- git checkout master
-- git pull
-- git checkout vehicles
-- git pull
+git checkout master
+git pull
+git checkout vehicles
+git pull
 
 
 Working with FORKZ:
 ===================
 I (John Z) use a rebase workflow in a similar scenario for repos I've forked from.  I take a little longer way to do the same thing Grant is suggesting, but it keeps everything reliably separated for me at least.   I generally only pull upstream into master and in my forked repo I leave master alone, treating it as my pivot branch between the two origins.  I then rebase master into whatever I am working on locally.
 
-1. Fork project
-1. Clone fork locally
-1. Fork is now origin
-1. Create a new branch in your local fork to work in: git checkout -b working
-1. Set original as "upstream" remote: git remote add upstream https://github.com/ORIGINAL_REPO
-1. Checkout master and run: git checkout master && git pull upstream master
-1. Checkout working and run: git checkout working && git rebase master
+Fork project
+Clone fork locally
+Fork is now origin
+Create a new branch in your local fork to work in: git checkout -b working
+Set original as "upstream" remote: git remote add upstream https://github.com/ORIGINAL_REPO
+Checkout master and run: git checkout master && git pull upstream master
+Checkout working and run: git checkout working && git rebase master
 
 
 '''
