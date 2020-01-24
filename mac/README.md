@@ -1,3 +1,7 @@
+disable mds (spotlight)
+=====
+sudo mdutil -a -i off
+
 mount writable ntfs drive
 ================================
 1. brew cask install osxfuse
