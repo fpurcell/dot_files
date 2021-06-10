@@ -1,6 +1,25 @@
-Check Out Commands 
+REBASE YO BRANCH w/ MASTER
+==========================
+- git pull --rebase origin <branch e.g., master | develop | etc>
+- git push -f
+
+
+GITLAB CREATE REMOTE BRANCH
 ===================
-git pull origin pull/<PULL REQUEST ID>/head
+- git checkout -b geoconfigs origin/develop
+- git push origin HEAD:geoconfigs
+
+
+
+PR commands
+===================
+fetch = +refs/pull/*/head:refs/remotes/origin/pr/*
+ 
+# switch to PR #999
+- emacs .git/config and add this line: fetch = +refs/pull/*/head:refs/remotes/origin/pr/*
+- Fetch PRs locally: $ git fetch origin
+- Checkout a particular PR: $ git checkout pr/999
+
 
 
 Info commands
@@ -12,20 +31,17 @@ git for-each-ref --sort=committerdate --format='%(HEAD) %(color:yellow)%(refname
 alias branches="git for-each-ref --sort=committerdate --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:short)%(color:reset))'"
 
 
-GITLAB CREATE REMOTE BRANCH
-===================
-- git checkout -b geoconfigs origin/develop
-- git push origin HEAD:geoconfigs
+_______________
+
+O L D   J U N K
+(might not be good)
+_______________
 
 
-PR commands
+Check Out Commands 
 ===================
-fetch = +refs/pull/*/head:refs/remotes/origin/pr/*
- 
-# switch to PR #999
-- emacs .git/config and add this line: fetch = +refs/pull/*/head:refs/remotes/origin/pr/*
-- Fetch PRs locally: $ git fetch origin
-- Checkout a particular PR: $ git checkout pr/999
+git pull origin pull/<PULL REQUEST ID>/head
+
 
 REBASE fork
 ==============
@@ -54,7 +70,6 @@ git checkout master
 git pull
 git checkout vehicles
 git pull
-
 
 Working with FORKZ:
 ===================
@@ -108,6 +123,4 @@ git push origin master -u
 git pull upstream master
 git fetch upstream
 git fetch upstream --prune
-
-
 
