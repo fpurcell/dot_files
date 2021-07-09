@@ -5,6 +5,10 @@
         path = ~/work/.gitconfig
 [core]
         autocrlf = false
+	filemode = false
+	fileMode = false
+	editor = emacs
+	symlinks = true
 [alias]
         co = checkout
         br = branch
