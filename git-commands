@@ -3,9 +3,9 @@ REBASE YO BRANCH w/ MASTER
 - git pull --rebase origin <branch e.g., master | develop | etc>
 - git push -f
 
-  NOTE: do not do a git pull between the original rebase, as you might be instructed from poorly written git messages if there are conflicts to resolve.  
-        Simply resolve those conflicts, then git add / commit them.  Doing a git pull on a rebase will screw up your commit history (will double the number 
-        of commits based on the pull, etc...?).
+  NOTE: **do not** do a git pull between the rebase and the push -f, as you might be instructed from poorly written git messages if there 
+        are conflicts to resolve. Simply resolve those conflicts, then git add / commit them.  Doing a git pull on a rebase will screw 
+        up your commit history (will double the number of commits based on the pull, etc...?).
 
 
 GITLAB CREATE REMOTE BRANCH
