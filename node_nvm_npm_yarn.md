@@ -1,7 +1,7 @@
 NPM:
-====
+----
 
-# publish to npmjs.com with 'beta' tag
+### publish to npmjs.com with 'beta' tag
 npm publish --tag beta
 
 
