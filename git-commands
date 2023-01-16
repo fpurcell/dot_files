@@ -8,11 +8,22 @@ REBASE YO BRANCH w/ MASTER
         up your commit history (will double the number of commits based on the pull, etc...?).
 
 
+INFO commands
+===================
+
+# SORTED BY LATEST COMMITS
+git branch -a --sort=-committerdate
+
+# SORTED BY LATEST AND show all remote branches, with dates of last commit:
+git for-each-ref --sort=committerdate --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:short)%(color:reset))'
+
+alias branches="git for-each-ref --sort=committerdate --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:short)%(color:reset))'"
+
+
 GITLAB CREATE REMOTE BRANCH
 ===================
 - git checkout -b geoconfigs origin/develop
 - git push origin HEAD:geoconfigs
-
 
 
 PR commands
@@ -23,16 +34,6 @@ fetch = +refs/pull/*/head:refs/remotes/origin/pr/*
 - emacs .git/config and add this line: fetch = +refs/pull/*/head:refs/remotes/origin/pr/*
 - Fetch PRs locally: $ git fetch origin
 - Checkout a particular PR: $ git checkout pr/999
-
-
-
-Info commands
-===================
-
-# show all remote branches, with dates of last commit:
-git for-each-ref --sort=committerdate --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:short)%(color:reset))'
-
-alias branches="git for-each-ref --sort=committerdate --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:short)%(color:reset))'"
 
 
 _______________
