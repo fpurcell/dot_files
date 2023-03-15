@@ -20,6 +20,11 @@ git for-each-ref --sort=committerdate --format='%(HEAD) %(color:yellow)%(refname
 alias branches="git for-each-ref --sort=committerdate --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:short)%(color:reset))'"
 
 
+IGNORE FILES:
+============
+ - git update-index --assume-unchanged
+
+
 GITLAB CREATE REMOTE BRANCH
 ===================
 - git checkout -b geoconfigs origin/develop
