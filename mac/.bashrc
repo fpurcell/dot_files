@@ -26,7 +26,7 @@ alias ll='ls -alh'
 alias c=clear
 alias 'more=less'
 alias 'xemacs=/Applications/Aquamacs.app/Contents/MacOS/Aquamacs'
-
+alias 'ssh-dss=ssh -oHostKeyAlgorithms=+ssh-dss'
 
 # Python
 #alias python='/home/geoserve/install/python/bin/python'
@@ -38,6 +38,23 @@ function py6_func
 {
   # Python MAC
   export PATH="/Library/Frameworks/Python.framework/Versions/2.6/bin:${PATH}"
+}
+
+alias JVM17=jvm17_func
+function jvm17_func
+{
+  # java 17 mac
+  #export JAVA_HOME="/Library/Java/JavaVirtualMachines/temurin-17.jdk/Contents/Home"
+  export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk-17.jdk/Contents/Home"    
+  export PATH="${JAVA_HOME}/bin:${PATH}"
+}
+
+alias JVM21=jvm21_func
+function jvm21_func
+{
+  # java 21 mac
+  export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk-21.jdk/Contents/Home"
+  export PATH="${JAVA_HOME}/bin:${PATH}"
 }
 
 #alias mcount="for x in `grep -i mobilitymap l*/h*/a*07 | awk '{print $1}' | sort -u`; do echo $x; grep $x l*/h*/a*07 | wc; echo; nslookup $x; done"
