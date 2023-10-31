@@ -127,6 +127,7 @@ alias "SRC=export CLASSPATH=.;. $HOME/.bashrc"
 
 alias "TOM=cd $HOME/cluster"
 alias "DEV=cd $HOME/java/DEV"
+alias "RTP=cd $HOME/java/DEV/rtp"
 
 alias CPP=CPP_func
 function CPP_func
